@@ -1,6 +1,8 @@
 'use strict';
 
-module.exports = class SamsungPre2014Driver {
+const {Driver} = require('homey');
+
+module.exports = class SamsungPre2014Driver extends Driver {
 
     onInit() {
         this.log(`Samsung Pre 2014 driver has been initialized`);
