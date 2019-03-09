@@ -3,7 +3,7 @@
 const SamDriver = require('../../lib/SamDriver');
 const SamsungLegacy = require('../../lib/samsung_legacy');
 
-module.exports = class SamsungDriver extends SamDriver {
+module.exports = class SamsungLegacyDriver extends SamDriver {
 
     onInit() {
         super.onInit('Samsung Legacy');
