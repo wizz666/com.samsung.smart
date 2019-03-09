@@ -307,6 +307,56 @@
         "large": "/drivers/SamsungLegacy/assets/images/large.jpg",
         "small": "/drivers/SamsungLegacy/assets/images/small.jpg"
       }
+    },
+    {
+      "id": "SamsungPre2014",
+      "name": {
+        "en": "Samsung (pre 2014)"
+      },
+      "class": "tv",
+      "capabilities": [
+        "onoff",
+        "volume_mute",
+        "volume_up",
+        "volume_down",
+        "channel_up",
+        "channel_down"
+      ],
+      "settings": [
+        {
+          "type": "group",
+          "label": {
+            "en": "General settings"
+          },
+          "children": [
+            {
+              "id": "ipaddress",
+              "type": "text",
+              "label": {
+                "en": "IP address"
+              },
+              "value": ""
+            }
+          ]
+        }
+      ],
+      "pair": [
+        {
+          "id": "list_devices",
+          "template": "list_devices",
+          "navigation": {
+            "next": "add_my_devices"
+          }
+        },
+        {
+          "id": "add_my_devices",
+          "template": "add_devices"
+        }
+      ],
+      "images": {
+        "large": "/drivers/SamsungPre2014/assets/images/large.png",
+        "small": "/drivers/SamsungPre2014/assets/images/small.png"
+      }
     }
   ]
 }
