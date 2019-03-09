@@ -28,11 +28,11 @@ module.exports = class SamsungPre2014Device extends SamDevice {
         let info = await this._samsung.pingPort(8001, 2000, ipaddress)
             .catch(err => {
                 this.log('TV set unavailable');
-                //this.setUnavailable('TV not found. Check IP address.');
+                this.setUnavailable('TV not found. Check IP address.');
             });
         if (info) {
             this.log('TV set available');
-            //this.setAvailable();
+            this.setAvailable();
         }
     }
 
