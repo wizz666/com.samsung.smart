@@ -40,17 +40,23 @@ module.exports = class SamsungLegacyDevice extends SamDevice {
         callback(null, true);
     }
 
-    async pollDevice() {
-        if (this._is_powering_onoff !== undefined) {
-            return;
-        }
-        let onOff = await this._samsung.apiActive();
-        if (onOff && this.getAvailable() === false) {
+    async checkIPAddress(ipaddress) {
+        if (ipaddress) {
             this.setAvailable();
         }
-        if (onOff !== this.getCapabilityValue('onoff')) {
-            this.setCapabilityValue('onoff', onOff).catch(console.error);
+    }
+
+    async pollDevice() {
+        return;
+    }
+
+    async turnOnOff(onOff) {
+        this.setCapabilityValue('onoff', onOff).catch(console.error);
+        let response = onOff ? await this._samsung.wake(this) : await this._samsung.turnOff(this);
+        if (response) {
+            this.log('turnOnOff: finished: ' + (onOff ? 'on' : 'off'), response);
         }
+        return response;
     }
 
 };
